@@ -52,7 +52,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Serve static files from the frontend build folder
-app.use(express.static(path.join(__dirname, "frontend", "dist")));
+app.use(express.static(path.join(__dirname, "../frontend", "dist")));
 
 // Get stored data
 app.get("/data", (req, res) => {
@@ -86,7 +86,7 @@ app.post("/add-event", (req, res) => {
 
 // Serve React app for all other routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
 });
 
 // Start server
